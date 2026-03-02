@@ -1,45 +1,42 @@
-function getAverage(arr){
-    let total = 0;
-    for(let i of arr){
-      total += i;
-    }
-    return total / arr.length;
-}
+# Gradebook App
 
-function getGrade(score){
-  if(score === 100) return "A+";
-  if(score >= 90) return "A";
-  if(score >= 80) return "B";
-  if(score >= 70) return "C";
-  if(score >= 60) return "D";
-  return "F";
-}
+A simple JavaScript Gradebook application that calculates:
 
-function hasPassingGrade(score){
-  return getGrade(score) !== "F";
-}
+- Class average
+- Student grade
+- Pass or fail result
 
-function studentMsg(scoreArr, stdScore){
-  const stdAverage = getAverage(scoreArr);
-  const stdGrade = getGrade(stdScore);
-  const passOrFail = hasPassingGrade(stdScore);
+## 🚀 Features
 
-  if(passOrFail){
-    return `Class average: ${stdAverage}. Your grade: ${stdGrade}. You passed the course.`;
-  } else {
-    return `Class average: ${stdAverage}. Your grade: ${stdGrade}. You failed the course.`;
-  }
-}
+- Calculate class average
+- Assign letter grade
+- Determine passing status
+- Interactive UI
 
-document.getElementById("calculateBtn").addEventListener("click", function(){
-  const classInput = document.getElementById("classScores").value;
-  const studentScore = Number(document.getElementById("studentScore").value);
+## 🛠 Technologies Used
 
-  const scoreArray = classInput
-    .split(",")
-    .map(score => Number(score.trim()));
+- HTML
+- CSS
+- JavaScript (Vanilla JS)
 
-  const message = studentMsg(scoreArray, studentScore);
+## 📂 How It Works
 
-  document.getElementById("result").textContent = message;
-});
+1. Enter class scores separated by commas.
+2. Enter your score.
+3. Click "Calculate Result".
+4. View your grade and pass/fail message.
+
+## 📌 Example
+
+Input:
+Class Scores: 92, 88, 77, 100  
+Your Score: 85  
+
+Output:
+Class average: 89.25. Your grade: B. You passed the course.
+
+---
+
+## 👨‍💻 Author
+
+Hashim Noor
